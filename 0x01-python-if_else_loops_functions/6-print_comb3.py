@@ -1,5 +1,7 @@
-#!/usr/bin/python3
-for i in range(0, 8):
-    for j in range(i + 1, 10):
-        print("{:d}{:d}".format(i, j), end=', ')
-        print("{:d}{:d}".format(i + 1, j))
+#!/usr/bin/python3i
+for i in range(0, 90):
+    if i % 10 > i / 10:
+        if i != 89:
+        print("{:02d}, ".format(i), end='')
+    else:
+        print("{:02d}".format(i))
