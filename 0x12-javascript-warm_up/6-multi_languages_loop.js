@@ -1,4 +1,6 @@
 #!/usr/bin/node
-while
-	let line = (['C is fun', 'Python is cool', 'JavaScript is amazing']){
-	console.log(line);}
+
+const line = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+while (i = 0, i < line, i++){
+	console.log(line);
+}
