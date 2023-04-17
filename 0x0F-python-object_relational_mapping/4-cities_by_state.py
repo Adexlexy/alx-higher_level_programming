@@ -1,9 +1,8 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """ Select all columns from states table in hbtn database where
-name is the last arg passed from the commandline
+name is the last arg passed from the commandline and preventing
+sql injection attack
 """
-
-
 import MySQLdb
 from sys import argv
 
@@ -15,8 +14,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
     # executing the query from cursor environment
     cursor.execute(
-        "SELECT * FROM states \
-        WHERE name LIKE BINARY '{}' ORDER BY id".format(argv[4]))
+        "SELECT cities.id, cities.name, states.name FROM cities \
+        INNER JOIN states ON states.id=cities.state_id")
     # getting all query result
     rows = cursor.fetchall()
     for row in rows:
